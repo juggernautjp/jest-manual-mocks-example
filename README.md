@@ -35,7 +35,6 @@ The above table is from the Blog post [TypeScript 4.7 と Native Node.js ESM](ht
 
 ```bash
 $ git clone <this repository>
-$ npm init
 $ npm install
 # jest --verbose
 $ npm run dev:test
