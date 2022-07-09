@@ -1,0 +1,27 @@
+{
+  "name": "jest-manual-mocks-example",
+  "version": "0.0.0",
+  "description": "Jest Manual Mocks example with ESM and no Babel",
+  "main": "FileSummarizer.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --silent",
+    "dev:test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --silent=false --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juggernautjp/jest-manual-mocks-example.git"
+  },
+  "keywords": [
+    "jest"
+  ],
+  "author": "juggernautjp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juggernautjp/jest-manual-mocks-example/issues"
+  },
+  "homepage": "https://github.com/juggernautjp/jest-manual-mocks-example#readme",
+  "devDependencies": {
+    "jest": "^28.1.2"
+  }
+}
