@@ -9,7 +9,7 @@ and the source files are downloaded from [Jest examples/manual-mocks](https://gi
 
 As mentioned in the [ECMAScript Modules](https://jestjs.io/docs/ecmascript-modules), jest's ECMAScript Modules (ESM) support is experimental.
 
-This example is to find the workaround for jest ES Module support without Babel, and is related to the following issues:
+This example is to find the workaround for Jest ES Module support without Babel, and is related to the following issues:
 
 1. [Meta: Native support for ES Modules #9430](https://github.com/facebook/jest/issues/9430)
   - [the comment](https://github.com/facebook/jest/issues/9430#issuecomment-616232029)
@@ -25,10 +25,9 @@ This example is to find the workaround for jest ES Module support without Babel,
 | ESM  | CJS  | <span style='color:yellow'>OK</span>  | NG  | NG [^4]  |
 | CJS  | ESM  | NG  | <span style='color:yellow'>OK</span>  | NG  |
 
-The above table is from the Blog post [TypeScript 4.7 と Native Node.js ESM](https://quramy.medium.com/typescript-4-7-%E3%81%A8-native-node-js-esm-189753a19ba8)
+> ESM (ES Modules), CJS (CommonJS), NG (No Good)
 
-
-[^4]: 
+The above table is from the Blog post [TypeScript 4.7 と Native Node.js ESM](https://quramy.medium.com/typescript-4-7-%E3%81%A8-native-node-js-esm-189753a19ba8).
 
 
 
@@ -64,10 +63,6 @@ Jest: v28.1.2
 | FileSummarizerESM.test.js  | FileSummarizer.mjs  | No Mock (ESM require ESM)  | <span style='color:yellow'>FAIL</span> [^2] |
 | user.test.js             | models/user.mjs     | No Mock (ESM import ESM)     | PASS |
 | userMocked.test.js       | models/user.mjs     | ESM Mock (ESM import ESM)    | <span style='color:yellow'>FAIL</span> [^3] |
-
-[^1]: explained below "Workaround" section
-[^2]: explained below "Issue 1" section
-[^3]: explained below "Issue 2" section
 
 
 ### Workaround
@@ -140,6 +135,15 @@ jest.mock('fs');
 syncBuiltinESMExports.cjs is from [Node.js - Modules: node:module API - `module.syncBuiltinESMExports()`](https://nodejs.org/api/module.html#modulesyncbuiltinesmexports)
 
 To execute `node syncBuiltinESMExports.cjs` outputs nothing.
+
+
+
+## Footnote
+
+[^1]: explained below "Workaround" section
+[^2]: explained below "Issue 1" section
+[^3]: explained below "Issue 2" section
+[^4]: The table marks "NG", but [`module.createRequire(filename)`](https://nodejs.org/api/module.html#modulecreaterequirefilename) enable ESM to require CJS.
 
 
 
