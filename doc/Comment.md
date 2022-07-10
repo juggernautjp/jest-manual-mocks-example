@@ -30,9 +30,9 @@ I have tried modifying to work that example without Babel, and I found the follo
 
 1. `jest.mock()` works: when ES Module require CommonJS module with Node.js [`module.createRequire(filename)`](https://nodejs.org/api/module.html#modulecreaterequirefilename) method
   - e.g., FileSummarizer.cjs `require` Manual mock CommonJS module of fs.cjs.
-2. `jest.mock()` dose **NOT** work: when MS Module `import` ES Module.
+2. `jest.mock()` dose **not** work: when MS Module `import` ES Module.
   - e.g., when userMocked.test.js `import` Manual mock ES Module of models/user.mjs, `user.getAuthenticated()` return value of model/user.mjs instead of that of model/__mocks__/user.mjs.
 
-After the above 2nd problem would fix, I could use `jest.mock` with Manual Mocks of `import('node:fs/promise')`.
+After the above the 2nd problem would be fixed, I could use `jest.mock` with Manual Mocks of `import('node:fs/promise')`.
 
 For further information, see [my repository](https://github.com/juggernautjp/jest-manual-mocks-example).
