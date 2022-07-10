@@ -738,3 +738,27 @@ ES モジュールの import を使用している場合、通常 import 文は�
 これについての詳細や実際の動作は、[こちらのレポ](https://github.com/kentcdodds/how-jest-mocking-works) をご覧ください。
 
 
+
+
+### 10. Conditional exports
+
+- [Modules: Packages - Conditional exports](https://nodejs.org/api/packages.html#conditionalexports)
+
+> Conditional exports provide a way to map to different paths depending on certain conditions. They are supported for both CommonJS and ES module imports.
+>
+> For example, a package that wants to provide different ES module exports for `require()` and `import` can be written:
+
+条件付きエクスポートは、特定の条件に応じて異なるパスにマッピングする方法を提供します。これらは、CommonJS と ES module のインポートの両方でサポートされています。
+
+例えば、`require()` と `import` で異なる ES module のエクスポートを提供したいパッケージは、以下のように記述することができます。
+
+```json
+// package.json
+{
+  "exports": {
+    "import": "./index-module.js",
+    "require": "./index-require.cjs"
+  },
+  "type": "module"
+}
+```

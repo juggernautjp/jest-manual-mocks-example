@@ -59,7 +59,7 @@ Jest: v28.1.2
 | file_summarizer.test.js  | FileSummarizer.cjs  | node/fs CommonJS Mock (ESM require CommonJS) | PASS [^1] |
 | FileSummarizer.test.js   | FileSummarizer.js   | No Mock (ESM import node/fs module) | PASS |
 | FileSummarizerCJS.test.js  | FileSummarizer.cjs  | No Mock (ESM require CommonJS) | PASS |
-| FileSummarizerESM.test.js  | FileSummarizer.mjs  | No Mock (ESM require ESM)  | <span style='color:yellow'>FAIL</span> [^2] |
+| FileSummarizerESM.test.js  | FileSummarizer.mjs  | No Mock (ESM import ESM)   | <span style='color:yellow'>FAIL</span> [^2] |
 | user.test.js             | models/user.mjs     | No Mock (ESM import ESM)     | PASS |
 | userMocked.test.js       | models/user.mjs     | ESM Mock (ESM import ESM)    | <span style='color:yellow'>FAIL</span> [^3] |
 
@@ -137,6 +137,14 @@ To execute `node syncBuiltinESMExports.cjs` outputs nothing.
 
 
 
+## License
+
+[MIT licensed](./LICENSE)
+
+Facebook has the Copyright of the source code.
+
+
+
 ## Footnote
 
 [^1]: explained below "Workaround" section
@@ -144,10 +152,3 @@ To execute `node syncBuiltinESMExports.cjs` outputs nothing.
 [^3]: explained below "Issue 2" section
 [^4]: The table marks "NG", but [`module.createRequire(filename)`](https://nodejs.org/api/module.html#modulecreaterequirefilename) enable ESM to require CJS.
 
-
-
-## License
-
-[MIT licensed](./LICENSE)
-
-Facebook has the Copyright of the source code.
